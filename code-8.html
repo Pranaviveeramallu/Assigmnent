@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Ethical AI Development and Deployment</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="banner">
+  <!--<p><a href="#"><img src="images/home.gif" alt="homepage"></a> | <a href="#"><img src="images/mail.gif" alt="contact"></a></p>-->
+  
+</div>
+<div id="menu">
+  <ul id="nav">
+	<li id="about"><a href="about.html">About</a></li>	
+    <li id="who"><a href="index.html">Summary</a></li>
+    <li id="code-1"><a href="code-1.html">code-1</a></li>
+    <li id="code-2"><a href="code-2.html">code-2</a></li>
+    <li id="code-3" ><a href="code-3.html">code-3</a></li>
+	<br></br>
+	<li id="code-4"><a href="code-4.html">code-4</a></li>
+	<li id="code-5"><a href="code-5.html">code-5</a></li>
+	<li id="code-6"><a href="code-6.html">code-6</a></li>
+	<li id="code-7"><a href="code-7.html">code-7</a></li>
+	<li id="code-8" class="activelink" ><a href="#">code-8</a></li>
+  </ul>
+</div>
+<div id="container">
+  <div id="content">
+	<p><span style="font-weight:bold; color:#000000;font-size:13px">Implementing a complete code for socially responsible sourcing in IBM using Python would involve integrating with supplier data, implementing verification mechanisms, and assessing suppliers based on various criteria. Below is a simplified code snippet that demonstrates a basic approach for social responsible sourcing. You will need to adapt and expand this code to fit your specific requirements and integrate with your supplier data sources.</p>
+	<pre><span style="color:blue;font-size:13px;">
+import random
+
+# Define the supplier information
+suppliers = [
+    {'name': 'Supplier1', 'id': '123456', 'ethical_standards': 'High'},
+    {'name': 'Supplier2', 'id': '789012', 'ethical_standards': 'Medium'},
+    {'name': 'Supplier3', 'id': '345678', 'ethical_standards': 'Low'},
+    # Add more suppliers as needed
+]
+
+# Define the supplier rating information
+supplier_ratings = {}
+
+def assess_supplier(supplier_id, ethical_standards):
+    """
+    Assess and rate a supplier based on their ethical standards.
+    """
+    if supplier_id not in supplier_ratings:
+        supplier_ratings[supplier_id] = {}
+    
+    supplier_ratings[supplier_id]['ethical_standards'] = ethical_standards
+
+def get_supplier_rating(supplier_id):
+    """
+    Get the rating information for a specific supplier.
+    """
+    if supplier_id in supplier_ratings:
+        return supplier_ratings[supplier_id]
+    else:
+        return {}
+
+# Example usage:
+supplier = random.choice(suppliers)
+supplier_id = supplier['id']
+ethical_standards = supplier['ethical_standards']
+assess_supplier(supplier_id, ethical_standards)
+
+# Get the rating information for the supplier
+supplier_rating = get_supplier_rating(supplier_id)
+print(f"Rating for Supplier {supplier_id}:")
+if supplier_rating:
+    ethical_standards_rating = supplier_rating.get('ethical_standards', 'Not rated')
+    print(f"Ethical Standards: {ethical_standards_rating}")
+else:
+    print("No rating available for the supplier")
+</pre>
+	</div>	
+<div id="footer">
+  <!--<p><a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a> | &copy; 2007 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> | Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a></p>-->
+</div>
+</body>
+</html>

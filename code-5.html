@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Ethical AI Development and Deployment</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="banner">
+  <!--<p><a href="#"><img src="images/home.gif" alt="homepage"></a> | <a href="#"><img src="images/mail.gif" alt="contact"></a></p>-->
+  
+</div>
+<div id="menu">
+  <ul id="nav">
+	<li id="about"><a href="about.html">About</a></li>	
+    <li id="who"><a href="index.html">Summary</a></li>
+    <li id="code-1"><a href="code-1.html">code-1</a></li>
+    <li id="code-2"><a href="code-2.html">code-2</a></li>
+    <li id="code-3" ><a href="code-3.html">code-3</a></li>
+	<br></br>
+	<li id="code-4"><a href="code-4.html">code-4</a></li>
+	<li id="code-5"class="activelink"><a href="#">code-5</a></li>
+	<li id="code-6"><a href="code-6.html">code-6</a></li>
+	<li id="code-7" ><a href="code-7.html">code-7</a></li>
+	<li id="code-8"><a href="code-8.html">code-8</a></li>
+  </ul>
+</div>
+<div id="container">
+  <div id="content">
+	<p><span style="font-weight:bold; color:#000000;font-size:13px">Implementing a complete code for circular economy integration in IBM using Python would involve integrating with blockchain technology and implementing smart contracts. Below is a simplified code snippet that demonstrates a basic approach for tracking the lifecycle of products and implementing circular economy principles using a simple example. You will need to adapt and expand this code to fit your specific requirements and blockchain implementation.</p>
+	<pre><span style="color:blue;font-size:13px;">
+import hashlib
+import json
+from datetime import datetime
+
+# Define the product information
+products = [
+    {'name': 'Product1', 'id': '1234567890', 'status': 'production'},
+    {'name': 'Product2', 'id': '0987654321', 'status': 'distribution'},
+    {'name': 'Product3', 'id': '5678901234', 'status': 'consumption'},
+    # Add more products as needed
+]
+
+# Define the blockchain and initial block
+blockchain = []
+genesis_block = {
+    'index': 0,
+    'timestamp': str(datetime.now()),
+    'data': 'Genesis Block',
+    'previous_hash': '',
+    'hash': ''
+}
+blockchain.append(genesis_block)
+
+def calculate_hash(block):
+    """
+    Calculate the hash value of a block using SHA-256.
+    """
+    block_string = json.dumps(block, sort_keys=True).encode()
+    return hashlib.sha256(block_string).hexdigest()
+
+def create_block(data, previous_hash):
+    """
+    Create a new block for the blockchain.
+    """
+    block = {
+        'index': len(blockchain),
+        'timestamp': str(datetime.now()),
+        'data': data,
+        'previous_hash': previous_hash,
+        'hash': ''
+    }
+    block['hash'] = calculate_hash(block)
+    return block
+
+def add_block_to_chain(block):
+    """
+    Add a new block to the blockchain.
+    """
+    blockchain.append(block)
+
+def circular_economy_integration(product):
+    """
+    Perform circular economy integration for a specific product.
+    """
+    # Get the latest block from the blockchain
+    previous_block = blockchain[-1]
+
+    # Create data for the new block representing the product's lifecycle update
+    data = {
+        'product_id': product['id'],
+        'timestamp': str(datetime.now()),
+        'status': product['status']
+    }
+
+    # Create a new block for the updated product lifecycle and add it to the blockchain
+    new_block = create_block(data, previous_block['hash'])
+    add_block_to_chain(new_block)
+
+# Example usage:
+product = products[0]
+product['status'] = 'distribution'
+circular_economy_integration(product)
+
+# Print the updated blockchain
+for block in blockchain:
+    print(block)
+</pre>
+	</div>	
+<div id="footer">
+  <!--<p><a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a> | &copy; 2007 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> | Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a></p>-->
+</div>
+</body>
+</html>
